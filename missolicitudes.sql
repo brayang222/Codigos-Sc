@@ -1,0 +1,46 @@
+SELECT 
+    id,
+    Idcliente,
+    asunto,
+    descripcion,
+    idprioridad,
+    propietario,
+    fecha_inicio_creacion,
+    hora_creacion,
+    idliberacion,
+    fecha_liberacion,
+    fecha_inicio_programado,
+    hora_inicio_programado,
+    fecha_fin_programado,
+    hora_fin_programado,
+    fecha_estimada_facturacion,
+    abierto_a_verificar,
+    fecha_verificacion_manual,
+    fecha_verificacion,
+    pendientefacturar_a_facturar,
+    facturar_a_facturado,
+    idestado,
+    creadopor,
+    contacto,
+    correo,
+    causas,
+    solucion,
+    numero_factura,
+    fechafacturacion,
+    idproyecto,
+    idcolor,
+    valor_cotizacion,
+    buffer2,
+    verificacion,
+    tiempo,
+    recomendacion,
+    valor_cotizado,
+    sedes,
+    idcontra,
+    idservicio
+FROM 
+    tblsolicitudes
+WHERE
+    idestado = 1 
+    AND propietario = [usr_login]
+    AND YEAR(fecha_inicio_creacion) = YEAR(CURDATE());
